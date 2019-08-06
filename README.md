@@ -16,7 +16,7 @@ In case of draw, all players keep their cards.
 
 If you are not satisfied with your current card(s)... or if you have lost all your cards, you can buy one or more cards from the store. The new cards are added to the top of your deck.
 
-The code for this game and its API is just two files: 
+The code for this game and its API can be found in the following locations: 
   - [server/server.js](https://github.com/dataiku/api-challenge/tree/master/server/server.js)
   - [server/game.js](https://github.com/dataiku/api-challenge/tree/master/server/game.js)
 
