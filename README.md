@@ -49,3 +49,6 @@ You can then launch a demonstration of the game with the following command.
 npm run demo
 ```
 The code for the demonstration is [client/client.js](https://github.com/dataiku/api-challenge/tree/master/client/client.js)
+
+
+(Batman icon courtesy of [Vectoo](https://www.iconfinder.com/vectto))
