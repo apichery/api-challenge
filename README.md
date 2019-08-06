@@ -57,5 +57,5 @@ npm run demo
 ```
 The code for the demonstration is [client/client.js](https://github.com/dataiku/api-challenge/tree/master/client/client.js)
 
-
-(Batman icon courtesy of [Vectoo](https://www.iconfinder.com/vectto))
+----
+Batman icon, courtesy of [Vectoo](https://www.iconfinder.com/icons/2525034/batman_halloween_hero_super_hero_icon) under [CC BY-SA 3.0 license](https://creativecommons.org/licenses/by-sa/3.0/)
