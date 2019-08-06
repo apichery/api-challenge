@@ -39,7 +39,7 @@ npm run start
 
 Open your browser and go to [http://localhost:4000/ping](http://localhost:4000/ping). If everything is setup correctly your browser should display:
 ```
-{"status":"OK"}`
+{"status":"OK"}
 ```
 
 You can then launch a demonstration of the game with the following command.
