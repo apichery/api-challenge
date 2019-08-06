@@ -1,12 +1,8 @@
 # API Technical Test @ Dataiku
 
-## Challenge
-
-The goal is to write the documentation for the REST API of a small card game, and optionally to write a client library in the language of your choice to ease programming against this API.
-
 ## Game API
 
-This API allow players to play a game similar to Top Trumps card games. As a player, you can register and get a starter deck of cards.
+This repository contains the source code of an small game similar to [Top Trumps card games](https://en.wikipedia.org/wiki/Top_Trumps). As a player, you can register and get a starter deck of cards.
 Each card represents a hero from the Marvel universe and has 4 characteristics: strength, skill, size, and popularity.
 
 To get new cards, you fight with your cards. Each deck of card is ordered and you fight with the first card of your deck. You can have a look at
@@ -19,6 +15,12 @@ If you are not satisfied with your current card(s)... or if you have lost all yo
 The code for this game and its API can be found in the following locations: 
   - [server/server.js](https://github.com/dataiku/api-challenge/tree/master/server/server.js)
   - [server/game.js](https://github.com/dataiku/api-challenge/tree/master/server/game.js)
+
+## Challenge
+
+Your goal is to write:
+ 1. the documentation for the REST API of a small card game
+ 1. a client library in the language of your choice to ease programming against this REST API.
 
 Game on!
 
