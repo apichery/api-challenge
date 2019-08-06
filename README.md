@@ -12,7 +12,7 @@ Skills | 17
 Size | 5.7
 Popularity | 9.8
 
-To get new cards, you fight with your cards. Each deck of card is ordered and you fight with the first card of your deck. You can have a look at
+To get new cards, you can fight with your cards against the computer. Each deck of card is ordered and you fight with the first card of your deck. You can have a look at
 it and decide which characteristic is the most promising and challenge the computer with this characteristic. If the card of the computer has a higher
 value than yours on this characteristic, you loose your card... But, if your card is better, the card from the computer is yours (and you keep you card).
 In case of draw, all players keep their cards.
