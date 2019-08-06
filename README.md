@@ -31,8 +31,8 @@ npm run start
 
 Open your browser and go to [http://localhost:4000/ping](http://localhost:4000/ping). If everything is setup correctly you should get `{"status":"OK"}`.
 
-You can then launch a demonstration of the game with the following command. You can see the code in [client/client.js](https://github.com/dataiku/api-challenge/tree/master/client/client.js)
+You can then launch a demonstration of the game with the following command.
 ```sh
-npm install
 npm run demo
 ```
+The code for the demonstration is [client/client.js](https://github.com/dataiku/api-challenge/tree/master/client/client.js)
