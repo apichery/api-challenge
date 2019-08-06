@@ -23,7 +23,7 @@ The code for this game and its API is just two files:
 Game on!
 
 ## Getting Started
-Install a recent version of [nodeJS](https://nodejs.org/en/download/) and npm. Then open a terminal and make sure they are properly installed.
+Install a recent version of [nodeJS](https://nodejs.org/en/download/) and npm on your computer. Open a terminal and issue the following command to confirm they are properly installed.
 ```sh
 $ node -v
 v11.8.0
@@ -31,7 +31,7 @@ $ npm -v
 6.10.2
 ```
 
-Once nodeJS and npm are correctly installed, clone this repository on your computer and go to the corresponding directory
+Now clone this repository and go to the corresponding directory
 ```sh
 npm install
 npm run start
