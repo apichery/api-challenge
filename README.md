@@ -2,7 +2,7 @@
 
 ## Game API
 
-This repository contains the source code of an small game similar to [Top Trumps card games](https://en.wikipedia.org/wiki/Top_Trumps). As a player, you can register and get a starter deck of cards.
+This repository contains the source code of a small game similar to [Top Trumps card games](https://en.wikipedia.org/wiki/Top_Trumps). As a player, you can register and get a starter deck of cards.
 Each card represents a hero from the Marvel universe and has 4 characteristics: strength, skill, size, and popularity.
 
 ![Batman](https://github.com/dataiku/api-challenge/blob/master/resources/batman.png) | Batman
@@ -32,7 +32,7 @@ Your goal is to write:
 Game on!
 
 ## Getting Started
-Install a recent version of [nodeJS](https://nodejs.org/en/download/) and npm on your computer. Open a terminal and issue the following command to confirm they are properly installed.
+Install a recent version of [nodeJS](https://nodejs.org/en/download/) and npm on your computer. Open a terminal and issue the following command to confirm they are properly installed (you don't need the exact same versions).
 ```sh
 $ node -v
 v11.8.0
