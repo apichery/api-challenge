@@ -32,8 +32,6 @@ app.get('/next-card', (req, res) => {
 });
 
 app.post('/battle', (req, res) => {
-  console.log(req.body)
-  console.log(req.body.field)
   game.battleCard(res, req.headers.playerid, req.body.field);
 });
 
