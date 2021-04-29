@@ -57,5 +57,226 @@ npm run demo
 ```
 The code for the demonstration is [client/client.js](https://github.com/dataiku/api-challenge/tree/master/client/client.js)
 
+## API Reference
+The following API endpoints are available for interaction with the Top Trump game. 
+  
+The host for all API calls will be `http://localhost:4000` when using the default server settings.
+  
+  
+#### GET /ping
+Returns information about the state of the game server.
+
+Example Call
+```sh
+  curl --location --request GET 'http://localhost:4000/ping'
+```
+
+Example Response
+```sh
+  {
+    "status": "OK"
+  }
+```
+
+*If you receive a response that is not ```{ "status": "OK" }``` confirm that the game server is running. If it is not, open a terminal and issue the following command in the corresponding directory ```npm run start```.*
+
+<br>
+
+#### POST /register
+Creates a new user within the game. 
+
+Save the `playerid` from the response. `playerid` is a required header parameter for all endpoints except `/ping` and `/register`.
+
+Body Parameters
+- `username` REQUIRED <br>
+*Enter a username for the user*
+- `birthdate` REQUIRED <br>
+*Enter the birth date of the user and follow YYYY-MM-DD format*
+- `email` REQUIRED <br>
+*Enter an email address for the user*
+
+
+Example Call
+```sh
+  curl --location --request POST 'http://localhost:4000/register' \
+    --header 'Content-Type: application/x-www-form-urlencoded' \
+    --data-urlencode 'username=example' \
+    --data-urlencode 'birthdate=YYYY-MM-DD' \
+    --data-urlencode 'email=example@example.com' \
+```
+
+Example Response
+```sh
+  {
+    "playerID": "0d57b4a0-a86f-11eb-94dd-e7a848edc63c",
+    "cards": [
+        {
+            "id": "0d57b4a2-a86f-11eb-94dd-e7a848edc63c",
+            "name": "Kitty Pryde",
+            "strength": 49,
+            "skill": 9,
+            "size": 5,
+            "popularity": 1.9
+        },
+        ...
+    ]
+  }
+```
+
+<br>
+
+#### GET /profile
+Returns profile information associated with a `playerid`.
+
+Header Parameters
+- `playerid` REQUIRED <br>
+  *Include a user's playerid, created during `POST /register` and found in the response.*
+
+
+Example Call
+```sh
+  curl --location --request GET 'http://localhost:4000/profile' \
+    --header 'playerid: 0d57b4a0-a86f-11eb-94dd-e7a848edc63c'
+```
+
+Example Response
+```sh
+  {
+    "username": "example",
+    "birthdate": "YYYY-MM-DD",
+    "email": "name@domain.com"
+  }
+```
+
+<br>
+
+#### GET /buy-card
+Adds a new card to the deck of `playerid`.
+
+Header Parameters
+- `playerid` REQUIRED <br>
+  *Include a user's playerid, created during `POST /register` and found in the response.*
+
+
+Example Call
+```sh
+  curl --location --request GET 'http://localhost:4000/buy-card' \
+    --header 'playerid: 0d57b4a0-a86f-11eb-94dd-e7a848edc63c'
+```
+
+Example Response
+```sh
+  {
+    "id": "c968d920-a7d0-11eb-94dd-e7a848edc63c",
+    "name": "Tigra",
+    "strength": 0,
+    "skill": 12,
+    "size": 9.7,
+    "popularity": 0.5
+  }
+```
+
+<br>
+
+#### GET /next-card
+Returns information about the next card pulled from the deck of `playerid`.
+
+Header Parameter
+- `playerid` REQUIRED <br>
+  *Include a user's playerid, created during `POST /register` and found in the response.*
+
+
+Example Call
+```sh
+  curl --location --request GET 'http://localhost:4000/next-card' \
+    --header 'playerid: 0d57b4a0-a86f-11eb-94dd-e7a848edc63c'
+```
+
+Example Response
+```sh
+  {
+    "id": "c968d920-a7d0-11eb-94dd-e7a848edc63c",
+    "name": "Tigra",
+    "strength": 0,
+    "skill": 12,
+    "size": 9.7,
+    "popularity": 0.5
+  }
+```
+
+<br>
+
+#### POST /battle
+Returns the results of the battle between `playerid`'s next card and the computer.
+
+Header Parameter
+- `playerid` REQUIRED <br>
+  *Include a user's playerid, created during `POST /register` and found in the response.*
+
+Body Parameter
+- `field` REQUIRED <br>
+*Include the field the user would like to battle with. Options include `strength`, `skill`, `size`, and `popularity`.*
+
+Example Call
+```sh
+  curl --location --request POST 'http://localhost:4000/battle' \
+    --header 'playerid: 0d57b4a0-a86f-11eb-94dd-e7a848edc63c' \
+    --header 'Content-Type: application/x-www-form-urlencoded' \
+    --data-urlencode 'field=strength'
+```
+
+Example Response
+```sh
+  {
+    "outcome": "win",
+    "card": {
+        "id": "5d7164f0-a873-11eb-94dd-e7a848edc63c",
+        "name": "Wonder Man",
+        "strength": 47,
+        "skill": 4,
+        "size": 5.3,
+        "popularity": 8.9
+    },
+    "opponentCard": {
+        "id": "9382fa10-a7d1-11eb-94dd-e7a848edc63c",
+        "name": "Daredevil",
+        "strength": 44,
+        "skill": 9,
+        "size": 6.7,
+        "popularity": 1.3
+    }
+  }
+```
+
+<br>
+
+#### GET /cards
+Returns an array of cards in the `playerid`'s deck.
+
+Header Parameter
+- `playerid` REQUIRED <br>
+  *Include a user's playerid, created during `POST /register` and found in the response.*
+
+Example Call
+```sh
+  curl --location --request GET 'http://localhost:4000/cards' \
+    --header 'playerid: 0d57b4a0-a86f-11eb-94dd-e7a848edc63c'
+```
+
+Example Response
+```sh
+  [
+    {
+        "id": "0d57b4a2-a86f-11eb-94dd-e7a848edc63c",
+        "name": "Kitty Pryde",
+        "strength": 49,
+        "skill": 9,
+        "size": 5,
+        "popularity": 1.9
+    },
+    ...
+  ]
+```
+
 ----
 Batman icon, courtesy of [Vectoo](https://www.iconfinder.com/icons/2525034/batman_halloween_hero_super_hero_icon) under [CC BY-SA 3.0 license](https://creativecommons.org/licenses/by-sa/3.0/)
